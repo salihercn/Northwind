@@ -1,4 +1,4 @@
---1)Belirli bir kategori adına göre ürünleri seçin.
+--1)Belirli bir kategori adÃ½na gÃ¶re Ã¼rÃ¼nleri seÃ§in.
 Create Procedure dbo.GetCategoryProductName
      @categoryname nvarchar(15)
 as
@@ -10,7 +10,7 @@ End;
 go
 Exec dbo.GetCategoryProductName @categoryname = 'Condiments';
 
---2)Belirli bir ülkeye göre müşterileri seçin.
+--2)Belirli bir Ã¼lkeye gÃ¶re mÃ¼Ã¾terileri seÃ§in.
 Create Proc dbo.GetCustomersCountry
      @countryname nvarchar(15)
 as
@@ -21,7 +21,7 @@ End;
 go
      Exec dbo.GetCustomersCountry @countryname = 'Germany';
 
---3)Belirli bir müşteri kimliğine göre siparişleri seçin
+--3)Belirli bir mÃ¼Ã¾teri kimliÃ°ine gÃ¶re sipariÃ¾leri seÃ§in
 Create Proc dbo.GetCustomerIDOrders
      @customerID nchar(5)
 as
@@ -32,7 +32,7 @@ End;
 go
      Exec dbo.GetCustomerIDOrders @customerID = 'VINET';
 
---4)Ürünler tablosundaki en yüksek fiyatlı ürünleri seçin.
+--4)ÃœrÃ¼nler tablosundaki en yÃ¼ksek fiyatlÃ½ Ã¼rÃ¼nleri seÃ§in.
 Create Proc dbo.ProductMaxPrice
 as
 Begin
@@ -40,7 +40,7 @@ Begin
 	 Where UnitPrice = (Select MAX(UnitPrice) from Products);
 End;
 
---5)Belirli bir ürün adına göre ürün bilgilerini seçin
+--5)Belirli bir Ã¼rÃ¼n adÃ½na gÃ¶re Ã¼rÃ¼n bilgilerini seÃ§in
 Create Proc dbo.ProductNameInformation
      @productname nvarchar(40)
 as
@@ -51,7 +51,7 @@ End;
 go
      Exec dbo.ProductNameInformation @productname = 'Chai';
 
---6)Belirli bir tarih aralığına göre siparişleri seçin
+--6)Belirli bir tarih aralÃ½Ã°Ã½na gÃ¶re sipariÃ¾leri seÃ§in
 Create Proc dbo.DateTimeOrders
      @startdate datetime,
 	 @enddate datetime
@@ -63,7 +63,7 @@ End;
 go
     Exec dbo.DateTimeOrders '1996-07-04' , '1997-07-04';
 
---7)Belirli bir müşteri kimliğine göre toplam sipariş tutarını hesaplayın
+--7)Belirli bir mÃ¼Ã¾teri kimliÃ°ine gÃ¶re toplam sipariÃ¾ tutarÃ½nÃ½ hesaplayÃ½n
 Create Proc dbo.TotalOrders
      @customerID nchar(5)
 as
@@ -76,7 +76,7 @@ End;
 go
      Exec dbo.TotalOrders @customerID = 'BLONP'
 
---8)Belirli bir kategori adına göre ürün sayısını hesaplayın.
+--8)Belirli bir kategori adÃ½na gÃ¶re Ã¼rÃ¼n sayÃ½sÃ½nÃ½ hesaplayÃ½n.
 Create Proc dbo.GetCategoryProductTotal
      @categoryname nvarchar(15)
 as
@@ -91,7 +91,7 @@ go
      Exec dbo.GetCategoryProductTotal  'Beverages'
 
 	-- Orta Seviye
---9)Ürünlerin ortalama fiyatını hesaplayın.
+--9)ÃœrÃ¼nlerin ortalama fiyatÃ½nÃ½ hesaplayÃ½n.
 Create Proc dbo.ProductAvgPrice
 
 as
@@ -103,7 +103,7 @@ End;
 go 
      Exec dbo.ProductAvgPrice;
 
---10)Müşterilerin ortalama yaşını hesaplayın.
+--10)MÃ¼Ã¾terilerin ortalama yaÃ¾Ã½nÃ½ hesaplayÃ½n.
 Create Proc dbo.EmployeeAvgAge
 
 as
@@ -115,7 +115,7 @@ End;
 go 
      Exec dbo.EmployeeAvgAge;
 	
---11)Siparişlerin ortalama tutarını hesaplayın
+--11)SipariÃ¾lerin ortalama tutarÃ½nÃ½ hesaplayÃ½n
 Create Proc dbo.OrdersAvgrice
 as
 Begin
@@ -127,7 +127,7 @@ End;
 go
      Exec dbo.OrdersAvgrice;
 
---12)Ülkelere göre toplam sipariş tutarını hesaplayın
+--12)Ãœlkelere gÃ¶re toplam sipariÃ¾ tutarÃ½nÃ½ hesaplayÃ½n
 Create Proc dbo.CountryOrderSum
 as
 Begin
@@ -137,7 +137,7 @@ Begin
 	 Group by o.ShipCountry;
 End;
 
---13)Belirli bir ülkedeki müşterilerin ortalama sipariş tutarını hesaplayın
+--13)Belirli bir Ã¼lkedeki mÃ¼Ã¾terilerin ortalama sipariÃ¾ tutarÃ½nÃ½ hesaplayÃ½n
 Create Proc dbo.CountryOfCustomersOrder
      @countryname nvarchar(15)
 as
@@ -152,7 +152,7 @@ End;
 go
      Exec dbo.CountryOfCustomersOrder @countryname = 'USA';
 
---14)En fazla sipariş yapan müşterileri seçin
+--14)En fazla sipariÃ¾ yapan mÃ¼Ã¾terileri seÃ§in
 Create Proc dbo.MostOrderCustomers
 as
 Begin
@@ -163,7 +163,7 @@ Begin
 	 Order by 2 desc;
 End;
 
---15)Her kategori için en çok satan ürünü seçin.!!! YAPAMADIM
+--15)Her kategori iÃ§in en Ã§ok satan Ã¼rÃ¼nÃ¼ seÃ§in.
 CREATE PROCEDURE dbo.GetBestSellingProductPerCategory
 AS
 BEGIN
@@ -180,8 +180,8 @@ BEGIN
     WHERE od.rn = 1;
 END;
 
---İleri Seviye
---16)Son 30 gün içinde sipariş vermiş olan tüm müşterileri iade eden bir saklı yordam oluşturun.
+--Ãleri Seviye
+--16)Son 30 gÃ¼n iÃ§inde sipariÃ¾ vermiÃ¾ olan tÃ¼m mÃ¼Ã¾terileri iade eden bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.ThirtyDaysOrders
 as
 Begin
@@ -195,7 +195,7 @@ End;
 go
      Exec dbo.ThirtyDaysOrders;
 
---17)Geçen ay 10'dan fazla sipariş edilen tüm ürünleri iade eden bir saklı yordam oluşturun.
+--17)GeÃ§en ay 10'dan fazla sipariÃ¾ edilen tÃ¼m Ã¼rÃ¼nleri iade eden bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.LastMonthOrders
 as
 Begin
@@ -212,7 +212,7 @@ End;
 go
     Exec dbo.LastMonthOrders;
 
---18)Geçen yıl 10.000 ABD dolarından fazla ürün satan tüm çalışanları iade eden bir saklı yordam oluşturun.
+--18)GeÃ§en yÃ½l 10.000 ABD dolarÃ½ndan fazla Ã¼rÃ¼n satan tÃ¼m Ã§alÃ½Ã¾anlarÃ½ iade eden bir saklÃ½ yordam oluÃ¾turun.
 Create dbo.LastlyYearSales
 as
 Begin
@@ -231,7 +231,7 @@ End;
 go
    Exec dbo.LastlyYearSales;
 
---19) Kaliforniya'da yaşayan tüm müşteriler için sevkiyat adresini güncelleyen bir saklı yordam oluşturun.
+--19) Kaliforniya'da yaÃ¾ayan tÃ¼m mÃ¼Ã¾teriler iÃ§in sevkiyat adresini gÃ¼ncelleyen bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.UpdateCustomersShipperAdress
 as
 Begin
@@ -245,7 +245,7 @@ End;
 go
     Exec dbo.UpdateCustomersShipperAdress;
 
---20)Stoktaki tüm ürünlerin miktarını %10 güncelleyen bir saklı yordam oluşturun.
+--20)Stoktaki tÃ¼m Ã¼rÃ¼nlerin miktarÃ½nÃ½ %10 gÃ¼ncelleyen bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.UnitsinStockUpdate
 as
 Begin
@@ -255,8 +255,8 @@ End;
 go 
      Exec dbo.UnitsinStockUpdate;
 
---21)Veritabanına yeni bir müşteri ekleyen ve ayrıca müşteri ilişkileri yönetimi (CRM) sisteminde onlar için
---yeni bir hesap oluşturan bir saklı yordam oluşturun.
+--21)VeritabanÃ½na yeni bir mÃ¼Ã¾teri ekleyen ve ayrÃ½ca mÃ¼Ã¾teri iliÃ¾kileri yÃ¶netimi (CRM) sisteminde onlar iÃ§in
+--yeni bir hesap oluÃ¾turan bir saklÃ½ yordam oluÃ¾turun.
 Create Table CRMAccounts
 (
     CustomerID int,
@@ -297,8 +297,8 @@ go
     @AccountType = 'Corporate',
     @AccountStatus = 'Active';
 
---22)Veritabanına yeni bir sipariş ekleyen ve ayrıca müşteri için yeni bir fatura 
---oluşturan bir saklı yordam oluşturun.
+--22)VeritabanÃ½na yeni bir sipariÃ¾ ekleyen ve ayrÃ½ca mÃ¼Ã¾teri iÃ§in yeni bir fatura 
+--oluÃ¾turan bir saklÃ½ yordam oluÃ¾turun.
 Create Table Invoicess 
 (
 CustomerID int, 
@@ -339,8 +339,8 @@ r
     VALUES (@CustomerID, @OrderID, @InvoiceNumber, @InvoiceDate, @TotalAmount);
 END;
 
---23)Veritabanına yeni bir ürün ekleyen ve ayrıca tüm ambarlar için envanter düzeylerini güncelleyen
---bir saklı yordam oluşturun.
+--23)VeritabanÃ½na yeni bir Ã¼rÃ¼n ekleyen ve ayrÃ½ca tÃ¼m ambarlar iÃ§in envanter dÃ¼zeylerini gÃ¼ncelleyen
+--bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.GetProductWarehouse
     @ProductName nvarchar(40),
     @CategoryID int,
@@ -370,8 +370,8 @@ go
        @UnitsInStock = 100,
        @ReorderLevel = 20;
 	   
---24)Veritabanına yeni bir çalışan ekleyen ve ayrıca insan kaynakları (İK) sisteminde onlar için yeni bir 
---kullanıcı hesabıoluşturan bir saklı yordam oluşturun.
+--24)VeritabanÃ½na yeni bir Ã§alÃ½Ã¾an ekleyen ve ayrÃ½ca insan kaynaklarÃ½ (ÃK) sisteminde onlar iÃ§in yeni bir 
+--kullanÃ½cÃ½ hesabÃ½oluÃ¾turan bir saklÃ½ yordam oluÃ¾turun.
 Create Table UserAccounts (
     EmployeeID int,
     Username nvarchar(50),
@@ -407,8 +407,8 @@ End;
 go
 EXEC dbo.NewEmployeeUser 'SLHERCN', 'Pitohui', '123456789';
 
---25)Bir müşteriyi veritabanından silen ve aynı zamanda CRM sistemindeki 
---hesabını da silen bir saklı yordam oluşturun.
+--25)Bir mÃ¼Ã¾teriyi veritabanÃ½ndan silen ve aynÃ½ zamanda CRM sistemindeki 
+--hesabÃ½nÃ½ da silen bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.DeleteCustomerWithCRM
     @CustomerID int
 as
@@ -423,8 +423,8 @@ END;
 go
     Exec  dbo.DeleteCustomerWithCRM @CustomerID = 123;
 
---26)Bir siparişi veritabanından silen ve aynı zamanda müşteri için faturayı da silen bir 
---saklı yordam oluşturun.
+--26)Bir sipariÃ¾i veritabanÃ½ndan silen ve aynÃ½ zamanda mÃ¼Ã¾teri iÃ§in faturayÃ½ da silen bir 
+--saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.DeleteOrderWithInvoices
     @OrderID int
 as
@@ -439,8 +439,8 @@ END;
 go
     Exec  dbo.DeleteOrderWithInvoices @OrderID = 123;
 
---27)Bir ürünü veritabanından silen ve ayrıca tüm ambarlar için envanter düzeylerini güncelleyen 
---bir saklı yordam oluşturun.
+--27)Bir Ã¼rÃ¼nÃ¼ veritabanÃ½ndan silen ve ayrÃ½ca tÃ¼m ambarlar iÃ§in envanter dÃ¼zeylerini gÃ¼ncelleyen 
+--bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.DeleteProductWithUpdate
     @ProductID int
 as
@@ -454,8 +454,8 @@ Begin
 	Where ProductID = @ProductID
 END;
 
---28)Bir çalışanı veritabanından silen ve aynı zamanda İK sistemindeki kullanıcı hesabını da silen
---bir saklı yordam oluşturun.
+--28)Bir Ã§alÃ½Ã¾anÃ½ veritabanÃ½ndan silen ve aynÃ½ zamanda ÃK sistemindeki kullanÃ½cÃ½ hesabÃ½nÃ½ da silen
+--bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.DeleteEmployeeWithUser
     @EmployeeID int
 as
@@ -469,8 +469,8 @@ Begin
 
 END;
 
---29)Belirli bir müşteri için toplam satışları alan ve aynı zamanda o müşteri tarafından verilen toplam 
---sipariş sayısını da içeren bir saklı yordam oluşturun.
+--29)Belirli bir mÃ¼Ã¾teri iÃ§in toplam satÃ½Ã¾larÃ½ alan ve aynÃ½ zamanda o mÃ¼Ã¾teri tarafÃ½ndan verilen toplam 
+--sipariÃ¾ sayÃ½sÃ½nÃ½ da iÃ§eren bir saklÃ½ yordam oluÃ¾turun.
 CREATE PROCEDURE dbo.GetCustomerSalesAndOrderCount
     @CustomerID INT
 AS
@@ -481,8 +481,8 @@ BEGIN
     WHERE o.CustomerID = @CustomerID;
 END;
 
---30)Belirli bir ürün için toplam satışları alan ve aynı zamanda o ürünün satılan toplam birim sayısını da
---içeren bir saklı yordam oluşturun.
+--30)Belirli bir Ã¼rÃ¼n iÃ§in toplam satÃ½Ã¾larÃ½ alan ve aynÃ½ zamanda o Ã¼rÃ¼nÃ¼n satÃ½lan toplam birim sayÃ½sÃ½nÃ½ da
+--iÃ§eren bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.ProductSalesAndUnitCount
     @ProductID int
 as
@@ -492,7 +492,7 @@ Begin
     Where od.ProductID = @ProductID;
 End;
 
---31)Geçen yıl en çok para harcayan ilk 10 müşteriyi alan bir saklı yordam oluşturun.
+--31)GeÃ§en yÃ½l en Ã§ok para harcayan ilk 10 mÃ¼Ã¾teriyi alan bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.LastlyYearMoney
 as
 Begin
@@ -510,7 +510,7 @@ End;
 go
     Exec dbo.LastlyYearMoney;
 
---32)Geçen yıl en çok satılan ilk 10 ürünü alan bir saklı yordam oluşturun.
+--32)GeÃ§en yÃ½l en Ã§ok satÃ½lan ilk 10 Ã¼rÃ¼nÃ¼ alan bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.LastYearOrders
 as
 Begin
@@ -528,7 +528,7 @@ End;
 go 
      Exec dbo.LastYearOrders;
 
---33)Geçen yıl en çok ürünü satan ilk 10 çalışanı alan bir saklı yordam oluşturun.
+--33)GeÃ§en yÃ½l en Ã§ok Ã¼rÃ¼nÃ¼ satan ilk 10 Ã§alÃ½Ã¾anÃ½ alan bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.LastYearEmployeeProdustSales
 as
 Begin
@@ -545,7 +545,7 @@ End;
 go 
      Exec dbo.LastYearEmployeeProdustSales
 
---34)Son 30 gün içinde sipariş vermiş olan tüm müşterilerin raporunu oluşturan bir saklı yordam oluşturun.
+--34)Son 30 gÃ¼n iÃ§inde sipariÃ¾ vermiÃ¾ olan tÃ¼m mÃ¼Ã¾terilerin raporunu oluÃ¾turan bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.CustomesReport
 as
 Begin
@@ -560,7 +560,7 @@ END;
 go 
   exec dbo.CustomesReport;
 
---35) Geçen ay 10'dan fazla sipariş edilen tüm ürünlerin raporunu oluşturan bir saklı yordam oluşturun.
+--35) GeÃ§en ay 10'dan fazla sipariÃ¾ edilen tÃ¼m Ã¼rÃ¼nlerin raporunu oluÃ¾turan bir saklÃ½ yordam oluÃ¾turun.
 Create Proc dbo.CustomesReport
 as
 Begin
