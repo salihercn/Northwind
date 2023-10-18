@@ -1,5 +1,5 @@
 # Northwind
-Northwind database'i ile geliştirdiğim sorgular. Bu sorguları yazarken 
+Northwind database'i ile geliştirdiğim sorgular. Bu database'i yukarıda eklediğim Nortwind starting query.sql dosyasından ayağa kaldırabilirsiniz. Bu sorguları yazarken 
 Temel Konular, 
 Normalization Odaklı Tasarım,
 Tasarımın Gerçek Veritabanına Geçirilmesi,
